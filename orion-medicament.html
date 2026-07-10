@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Orion Medicament — Dermatology & Skincare, Delivered</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#1B2A6B; --navy-deep:#121D4D; --ink:#1A1D2B;
+  --orange:#F2711C; --orange-hi:#FDB833; --red:#D7263D;
+  --paper:#FAFAF7; --card:#FFFFFF; --line:#E6E4DC; --mut:#6B6F80;
+  --c-acne:#6FAE3F; --c-hair:#D99A19; --c-fungal:#B85E96; --c-bright:#E23A7A;
+  --c-serum:#8A5CB8; --c-sun:#F2921D; --c-moist:#7B74B8; --c-treat:#2E9BD6;
+  --radius:14px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Instrument Sans',system-ui,sans-serif;background:var(--paper);color:var(--ink);line-height:1.55}
+h1,h2,h3,.disp{font-family:'Archivo',sans-serif}
+img{max-width:100%}
+a{color:inherit}
+button{font-family:inherit;cursor:pointer}
+:focus-visible{outline:3px solid var(--orange);outline-offset:2px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 22px}
+.eyebrow{font-family:'Archivo';font-stretch:110%;font-weight:700;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--orange)}
+
+/* ---------- top bar ---------- */
+.topbar{background:var(--navy-deep);color:#DDE1F5;font-size:.78rem;padding:7px 0}
+.topbar .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.topbar a{color:#FFD98A;text-decoration:none;font-weight:600}
+
+/* ---------- header ---------- */
+header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:50}
+.hd{display:flex;align-items:center;gap:26px;padding:14px 0}
+.logo{display:flex;align-items:center;gap:11px;text-decoration:none}
+.orb{width:44px;height:44px;border-radius:50%;background:radial-gradient(circle at 32% 28%,var(--orange-hi),var(--orange) 68%);display:grid;place-items:center;flex:none}
+.orb span{font-family:'Archivo';font-weight:900;font-size:1.5rem;color:var(--navy);transform:translateY(-1px)}
+.logo b{font-family:'Archivo';font-weight:800;font-size:1.18rem;color:var(--navy);line-height:1.05;display:block}
+.logo small{display:block;font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--mut);font-weight:600}
+nav{display:flex;gap:22px;margin-left:auto}
+nav a{text-decoration:none;font-weight:600;font-size:.9rem;color:var(--ink)}
+nav a:hover{color:var(--orange)}
+.cartbtn{position:relative;background:var(--navy);color:#fff;border:none;border-radius:999px;padding:10px 18px;font-weight:700;font-size:.88rem;display:flex;align-items:center;gap:8px}
+.cartbtn:hover{background:var(--navy-deep)}
+.badge{position:absolute;top:-7px;right:-7px;background:var(--red);color:#fff;font-size:.68rem;font-weight:800;border-radius:999px;min-width:20px;height:20px;display:grid;place-items:center;padding:0 5px}
+.stripe{height:5px;background:linear-gradient(100deg,var(--navy) 0 55%,#fff 55% 57%,var(--red) 57%)}
+
+/* ---------- hero ---------- */
+.hero{background:linear-gradient(180deg,#fff 0%,var(--paper) 100%);overflow:hidden;position:relative}
+.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center;padding-top:64px;padding-bottom:64px}
+.hero h1{font-weight:900;font-stretch:105%;font-size:clamp(2.1rem,4.4vw,3.4rem);line-height:1.04;color:var(--navy);letter-spacing:-.01em;margin:14px 0 18px}
+.hero h1 em{font-style:normal;color:var(--orange)}
+.hero p{color:var(--mut);max-width:46ch;font-size:1.03rem}
+.hero-cta{display:flex;gap:12px;margin-top:26px;flex-wrap:wrap}
+.btn{border:none;border-radius:999px;padding:13px 26px;font-weight:700;font-size:.95rem;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:transform .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn-orange{background:var(--orange);color:#fff}
+.btn-ghost{background:#fff;color:var(--navy);border:2px solid var(--navy)}
+.trust{display:flex;gap:26px;margin-top:34px;flex-wrap:wrap}
+.trust div{font-size:.82rem;color:var(--mut)}
+.trust b{display:block;font-family:'Archivo';font-size:1.05rem;color:var(--navy)}
+.hero-art{position:relative;min-height:340px}
+.big-orb{position:absolute;inset:0;margin:auto;width:min(340px,90%);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 30% 25%,var(--orange-hi),var(--orange) 70%);box-shadow:0 30px 70px rgba(242,113,28,.35)}
+.big-orb::after{content:"M";position:absolute;inset:0;display:grid;place-items:center;font-family:'Archivo';font-weight:900;font-size:9rem;color:var(--navy);opacity:.92}
+.float-chip{position:absolute;background:#fff;border:1px solid var(--line);border-radius:12px;padding:9px 14px;font-size:.78rem;font-weight:700;box-shadow:0 8px 24px rgba(20,28,70,.12);animation:bob 5s ease-in-out infinite}
+.fc1{top:8%;left:0}.fc2{bottom:14%;left:6%;animation-delay:1.2s}.fc3{top:22%;right:0;animation-delay:2.1s}.fc4{bottom:4%;right:8%;animation-delay:.6s}
+.float-chip i{font-style:normal;margin-right:6px}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+@media (prefers-reduced-motion:reduce){.float-chip{animation:none}.btn:hover{transform:none}}
+
+/* ---------- category strip ---------- */
+.cats{padding:54px 0 10px}
+.sec-head{display:flex;align-items:end;justify-content:space-between;gap:16px;margin-bottom:26px;flex-wrap:wrap}
+.sec-head h2{font-weight:800;font-size:clamp(1.5rem,2.6vw,2.1rem);color:var(--navy)}
+.cat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:14px}
+.cat{border:none;background:#fff;border-radius:var(--radius);padding:18px 14px 14px;text-align:left;border:1px solid var(--line);border-top:5px solid var(--cc,var(--navy));transition:box-shadow .2s,transform .15s;font-family:inherit}
+.cat:hover{box-shadow:0 10px 26px rgba(20,28,70,.12);transform:translateY(-3px)}
+.cat.active{background:var(--navy);color:#fff;border-color:var(--navy)}
+.cat b{font-family:'Archivo';font-size:.92rem;display:block;margin-bottom:3px}
+.cat span{font-size:.74rem;color:var(--mut)}
+.cat.active span{color:#C9CFEA}
+
+/* ---------- shop ---------- */
+.shop{padding:34px 0 70px}
+.tools{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:26px;align-items:center}
+.search{flex:1;min-width:220px;display:flex;align-items:center;background:#fff;border:1.5px solid var(--line);border-radius:999px;padding:10px 18px;gap:10px}
+.search input{border:none;outline:none;flex:1;font-size:.95rem;font-family:inherit;background:transparent}
+.pill{border:1.5px solid var(--line);background:#fff;border-radius:999px;padding:9px 18px;font-weight:600;font-size:.85rem}
+.pill.on{background:var(--navy);color:#fff;border-color:var(--navy)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(245px,1fr));gap:18px}
+.pcard{background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;transition:box-shadow .2s,transform .15s}
+.pcard:hover{box-shadow:0 14px 32px rgba(20,28,70,.13);transform:translateY(-3px)}
+.pcap{height:8px;background:var(--cc,var(--navy))}
+.pbody{padding:16px 16px 14px;display:flex;flex-direction:column;flex:1}
+.ptags{display:flex;gap:6px;margin-bottom:9px;flex-wrap:wrap}
+.tag{font-size:.64rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;border-radius:5px;padding:3px 8px}
+.tag-cat{background:color-mix(in srgb,var(--cc) 14%,white);color:var(--cc)}
+.tag-brand{background:#EEF0FA;color:var(--navy)}
+.tag-rx{background:var(--red);color:#fff}
+.tag-otc{background:#E7F3DF;color:#3E7A1E}
+.pcard h3{font-size:1.04rem;font-weight:800;color:var(--ink);line-height:1.2}
+.comp{font-size:.8rem;color:var(--mut);margin:6px 0 4px;flex:1}
+.pack{font-size:.74rem;color:var(--mut)}
+.prow{display:flex;align-items:center;justify-content:space-between;margin-top:13px;gap:10px}
+.price{font-family:'Archivo';font-weight:800;font-size:1.12rem;color:var(--navy)}
+.price small{font-weight:600;font-size:.68rem;color:var(--mut);display:block}
+.add{background:var(--orange);border:none;color:#fff;border-radius:999px;padding:9px 18px;font-weight:700;font-size:.84rem}
+.add:hover{background:#d8600f}
+.rx-note{font-size:.7rem;color:var(--red);margin-top:9px;font-weight:600}
+.empty{padding:60px 0;text-align:center;color:var(--mut)}
+
+/* ---------- rx banner ---------- */
+.rxband{background:var(--navy);color:#E7EAF8;padding:44px 0}
+.rxband .wrap{display:grid;grid-template-columns:auto 1fr;gap:26px;align-items:center}
+.rx-orb{width:74px;height:74px;border-radius:50%;background:radial-gradient(circle at 32% 28%,var(--orange-hi),var(--orange) 68%);display:grid;place-items:center;font-family:'Archivo';font-weight:900;font-size:1.6rem;color:var(--navy)}
+.rxband h2{color:#fff;font-size:1.4rem;margin-bottom:8px}
+.rxband p{font-size:.92rem;max-width:72ch}
+
+/* ---------- b2b ---------- */
+.b2b{padding:70px 0;background:#fff;border-top:1px solid var(--line)}
+.b2b .wrap{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:start}
+.b2b h2{font-size:clamp(1.5rem,2.6vw,2.1rem);color:var(--navy);margin:10px 0 14px}
+.b2b p{color:var(--mut);max-width:52ch}
+.b2b-list{margin:22px 0 0;display:grid;gap:14px}
+.b2b-list div{display:flex;gap:13px;align-items:start}
+.dot{width:36px;height:36px;flex:none;border-radius:10px;background:#EEF0FA;display:grid;place-items:center;font-size:1rem}
+.b2b-list b{display:block;font-family:'Archivo';font-size:.95rem}
+.b2b-list span{font-size:.85rem;color:var(--mut)}
+.b2b-card{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:28px}
+.b2b-card h3{font-size:1.1rem;color:var(--navy);margin-bottom:4px}
+.b2b-card>p{font-size:.85rem;margin-bottom:18px}
+.field{margin-bottom:14px}
+.field label{display:block;font-size:.78rem;font-weight:700;margin-bottom:5px}
+.field input,.field select,.field textarea{width:100%;border:1.5px solid var(--line);border-radius:10px;padding:11px 13px;font-family:inherit;font-size:.9rem;background:#fff}
+.field textarea{resize:vertical;min-height:84px}
+.wa{width:100%;background:#25D366;color:#fff;border:none;border-radius:999px;padding:14px;font-weight:800;font-size:.98rem;display:flex;justify-content:center;gap:9px}
+.wa:hover{background:#1DA851}
+.or-call{text-align:center;font-size:.82rem;color:var(--mut);margin-top:12px}
+.or-call a{font-weight:700;color:var(--navy)}
+
+/* ---------- about ---------- */
+.about{padding:70px 0}
+.about .wrap{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+.about h2{font-size:clamp(1.5rem,2.6vw,2.1rem);color:var(--navy);margin:10px 0 14px}
+.about p{color:var(--mut);margin-bottom:12px}
+.brandwall{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.bcell{background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px;text-align:center}
+.bcell b{font-family:'Archivo';font-weight:900;font-size:1.3rem;display:block}
+.bcell.lyra b{color:#3A1E96}.bcell.bio b{color:#E23A7A}
+.bcell span{font-size:.74rem;color:var(--mut)}
+
+/* ---------- footer ---------- */
+footer{background:var(--navy-deep);color:#B9BFDD;padding:48px 0 26px;font-size:.85rem}
+footer .wrap{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:34px}
+footer h4{color:#fff;font-family:'Archivo';font-size:.95rem;margin-bottom:12px}
+footer a{color:#B9BFDD;text-decoration:none;display:block;margin-bottom:8px}
+footer a:hover{color:#FFD98A}
+.legal{grid-column:1/-1;border-top:1px solid #2A366F;margin-top:24px;padding-top:18px;font-size:.74rem;color:#8A92BC}
+
+/* ---------- cart drawer ---------- */
+.overlay{position:fixed;inset:0;background:rgba(15,20,45,.5);z-index:90;opacity:0;pointer-events:none;transition:opacity .25s}
+.overlay.show{opacity:1;pointer-events:auto}
+.drawer{position:fixed;top:0;right:0;height:100%;width:min(430px,100%);background:#fff;z-index:100;transform:translateX(105%);transition:transform .3s;display:flex;flex-direction:column;box-shadow:-14px 0 40px rgba(0,0,0,.18)}
+.drawer.show{transform:none}
+.d-head{padding:20px 22px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center}
+.d-head h3{color:var(--navy)}
+.x{background:none;border:none;font-size:1.5rem;line-height:1;color:var(--mut)}
+.d-body{flex:1;overflow:auto;padding:18px 22px}
+.citem{display:flex;gap:12px;padding:13px 0;border-bottom:1px dashed var(--line)}
+.cchip{width:10px;border-radius:6px;background:var(--cc,var(--navy));flex:none}
+.citem b{font-size:.9rem;display:block}
+.citem small{color:var(--mut);font-size:.74rem}
+.qty{display:flex;align-items:center;gap:9px;margin-top:7px}
+.qty button{width:26px;height:26px;border-radius:8px;border:1.5px solid var(--line);background:#fff;font-weight:800}
+.citem .amt{margin-left:auto;text-align:right;font-family:'Archivo';font-weight:800;color:var(--navy)}
+.rm{background:none;border:none;color:var(--red);font-size:.72rem;font-weight:700;margin-top:6px;padding:0}
+.rx-upload{background:#FDF1F2;border:1.5px dashed var(--red);border-radius:12px;padding:14px;margin:16px 0;font-size:.8rem}
+.rx-upload b{color:var(--red);display:block;margin-bottom:6px}
+.rx-upload input{margin-top:8px;font-size:.78rem;width:100%}
+.rx-ok{color:#2E7D32;font-weight:700;font-size:.78rem;margin-top:8px;display:none}
+.d-foot{border-top:1px solid var(--line);padding:18px 22px}
+.tot{display:flex;justify-content:space-between;font-family:'Archivo';font-weight:800;font-size:1.15rem;color:var(--navy);margin-bottom:14px}
+.d-note{font-size:.72rem;color:var(--mut);text-align:center;margin-top:10px}
+.toast{position:fixed;bottom:26px;left:50%;transform:translate(-50%,20px);background:var(--navy);color:#fff;padding:12px 22px;border-radius:999px;font-weight:700;font-size:.88rem;opacity:0;transition:.3s;z-index:120;pointer-events:none}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+
+@media(max-width:900px){
+  .hero .wrap,.b2b .wrap,.about .wrap{grid-template-columns:1fr}
+  .hero-art{min-height:300px;order:-1}
+  nav{display:none}
+  footer .wrap{grid-template-columns:1fr}
+  .rxband .wrap{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <span>🩺 Rx medicines dispensed only against a valid prescription</span>
+    <span>Bulk & trade orders: <a href="https://wa.me/919970158572" target="_blank" rel="noopener">WhatsApp +91 99701 58572</a></span>
+  </div>
+</div>
+
+<header>
+  <div class="wrap hd">
+    <a class="logo" href="#top">
+      <span class="orb"><span>M</span></span>
+      <span><b>Orion Medicament</b><small>Delivering Quality, Building Relationships</small></span>
+    </a>
+    <nav>
+      <a href="#shop">Shop</a>
+      <a href="#rx">Prescriptions</a>
+      <a href="#b2b">Bulk / B2B</a>
+      <a href="#about">About</a>
+    </nav>
+    <button class="cartbtn" onclick="openCart()">Cart <span class="badge" id="cartCount">0</span></button>
+  </div>
+  <div class="stripe"></div>
+</header>
+
+<section class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">Dermatology · Cosmeceuticals · Hair Care</span>
+      <h1>Skin science you can trust, <em>delivered to your door.</em></h1>
+      <p>Orion Medicament brings the complete Lyra and Biorome Dermacare ranges — from daily-use serums and sunscreens to doctor-prescribed treatments — with genuine stock and fast dispatch.</p>
+      <div class="hero-cta">
+        <a class="btn btn-orange" href="#shop">Shop all products</a>
+        <a class="btn btn-ghost" href="#b2b">Bulk / trade inquiry</a>
+      </div>
+      <div class="trust">
+        <div><b>2 brands</b>Lyra & Biorome</div>
+        <div><b>60+ SKUs</b>Derma & cosmeceutical</div>
+        <div><b>100% genuine</b>Direct from marketers</div>
+        <div><b>Rx-safe</b>Pharmacist verified</div>
+      </div>
+    </div>
+    <div class="hero-art" aria-hidden="true">
+      <div class="big-orb"></div>
+      <div class="float-chip fc1"><i>🧴</i>Niacinamide 10%</div>
+      <div class="float-chip fc2"><i>☀️</i>SPF 50+ PA+++</div>
+      <div class="float-chip fc3"><i>💊</i>Hair regrowth</div>
+      <div class="float-chip fc4"><i>✨</i>Glutathione glow</div>
+    </div>
+  </div>
+</section>
+
+<section class="cats wrap">
+  <div class="sec-head">
+    <div>
+      <span class="eyebrow">Browse by concern</span>
+      <h2>What are we treating today?</h2>
+    </div>
+  </div>
+  <div class="cat-grid" id="catGrid"></div>
+</section>
+
+<section class="shop wrap" id="shop">
+  <div class="sec-head">
+    <div>
+      <span class="eyebrow">Full catalog</span>
+      <h2>All products</h2>
+    </div>
+  </div>
+  <div class="tools">
+    <div class="search">🔍 <input id="q" type="search" placeholder="Search by product, ingredient or concern…" oninput="render()"></div>
+    <button class="pill on" data-b="all" onclick="setBrand('all',this)">All brands</button>
+    <button class="pill" data-b="Lyra" onclick="setBrand('Lyra',this)">Lyra</button>
+    <button class="pill" data-b="Biorome" onclick="setBrand('Biorome',this)">Biorome</button>
+    <button class="pill" id="otcPill" onclick="toggleOTC()">OTC only</button>
+  </div>
+  <div class="grid" id="grid"></div>
+  <div class="empty" id="empty" style="display:none">No products match — try clearing the search or filters.</div>
+</section>
+
+<section class="rxband" id="rx">
+  <div class="wrap">
+    <div class="rx-orb">Rx</div>
+    <div>
+      <h2>How prescription orders work</h2>
+      <p>Products marked <b>Rx</b> (isotretinoin, finasteride, clobetasol, itraconazole and similar) are Schedule H medicines. Add them to your cart like any other product — at checkout you'll attach a photo of a valid prescription, and our pharmacist verifies it before dispatch. No prescription yet? Consult your dermatologist first; these medicines need medical supervision.</p>
+    </div>
+  </div>
+</section>
+
+<section class="b2b" id="b2b">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">For pharmacies, clinics & distributors</span>
+      <h2>Bulk & trade orders on WhatsApp</h2>
+      <p>Orion Medicament supplies retail pharmacies, dermatology clinics and stockists across Maharashtra with the full Lyra and Biorome ranges at trade terms.</p>
+      <div class="b2b-list">
+        <div><span class="dot">🏪</span><div><b>Retail pharmacies</b><span>Scheme-based pricing, mixed-brand cartons, weekly replenishment.</span></div></div>
+        <div><span class="dot">🩺</span><div><b>Dermatology clinics</b><span>Clinic dispensing packs, samples and product literature for your patients.</span></div></div>
+        <div><span class="dot">🚚</span><div><b>Stockists & distributors</b><span>Territory-wise distribution with genuine, batch-traceable supply.</span></div></div>
+      </div>
+    </div>
+    <div class="b2b-card">
+      <h3>Send a bulk inquiry</h3>
+      <p>Fill this in and we'll open WhatsApp with your inquiry pre-typed — one tap to send.</p>
+      <div class="field"><label for="bName">Your name</label><input id="bName" placeholder="e.g. Atharva Kulkarni"></div>
+      <div class="field"><label for="bBiz">Business name & city</label><input id="bBiz" placeholder="e.g. Shree Medico, Nashik"></div>
+      <div class="field"><label for="bType">You are a</label>
+        <select id="bType"><option>Retail pharmacy</option><option>Dermatology clinic</option><option>Stockist / distributor</option><option>Hospital</option><option>Other</option></select>
+      </div>
+      <div class="field"><label for="bMsg">What do you need?</label><textarea id="bMsg" placeholder="e.g. Rate list for Lyra anti-fungal range, 50+ units/month"></textarea></div>
+      <button class="wa" onclick="sendB2B()">🟢 Send inquiry on WhatsApp</button>
+      <p class="or-call">Prefer to talk? <a href="tel:+919970158572">Call +91 99701 58572</a></p>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">About us</span>
+      <h2>Delivering quality, building relationships.</h2>
+      <p>Orion Medicament is a dermatology-focused pharmaceutical marketing and distribution house. We partner with trusted manufacturers so that patients, pharmacies and clinics get genuine derma care — from everyday cosmeceuticals to specialised prescription treatments.</p>
+      <p>Every product we ship is sourced directly from the brand, batch-traceable, and stored under proper conditions. That's the relationship part of our tagline.</p>
+    </div>
+    <div class="brandwall">
+      <div class="bcell lyra"><b>Lyra</b><span>Excellence in Dermatology & Cosmeceuticals — 20 years of trust</span></div>
+      <div class="bcell bio"><b>Biorome</b><span>Dermacare — towards advance skincare, haircare & beauty</span></div>
+      <div class="bcell"><b style="color:var(--orange)">60+</b><span>SKUs across 8 categories</span></div>
+      <div class="bcell"><b style="color:var(--navy)">Rx ✓</b><span>Pharmacist-verified prescription handling</span></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <h4>Orion Medicament</h4>
+      <p>Dermatology & cosmeceutical distribution.<br>Atharva Kulkarni · +91 99701 58572</p>
+      <p style="margin-top:10px"><a href="https://wa.me/919970158572" target="_blank" rel="noopener">WhatsApp us →</a></p>
+    </div>
+    <div>
+      <h4>Shop</h4>
+      <a href="#shop">All products</a>
+      <a href="#rx">Prescription policy</a>
+      <a href="#b2b">Bulk / trade</a>
+    </div>
+    <div>
+      <h4>Brands</h4>
+      <a href="#about">Lyra</a>
+      <a href="#about">Biorome Dermacare</a>
+    </div>
+    <p class="legal">Prototype for design review — prices shown are indicative placeholders, not actual MRP. Schedule H medicines are sold strictly against a valid prescription as per the Drugs & Cosmetics Act, 1940 and Rules, 1945. Product information is sourced from brand literature and is not medical advice.</p>
+  </div>
+</footer>
+
+<!-- cart -->
+<div class="overlay" id="overlay" onclick="closeCart()"></div>
+<aside class="drawer" id="drawer" aria-label="Shopping cart">
+  <div class="d-head"><h3>Your cart</h3><button class="x" onclick="closeCart()" aria-label="Close cart">×</button></div>
+  <div class="d-body" id="cartBody"></div>
+  <div class="d-foot">
+    <div class="tot"><span>Total</span><span id="cartTotal">₹0</span></div>
+    <button class="wa" onclick="checkout()">🟢 Place order on WhatsApp</button>
+    <p class="d-note">Your order opens in WhatsApp for confirmation — pay on delivery or as agreed.</p>
+  </div>
+</aside>
+<div class="toast" id="toast">Added to cart</div>
+
+<script>
+const CATS = [
+  {id:'acne',   name:'Acne Control',        note:'Face washes, gels, isotretinoin', c:'var(--c-acne)'},
+  {id:'hair',   name:'Hair & Scalp',        note:'Minoxidil, finasteride, nutrition', c:'var(--c-hair)'},
+  {id:'fungal', name:'Anti-Fungal',         note:'Creams, tablets, shampoos', c:'var(--c-fungal)'},
+  {id:'bright', name:'Brightening',         note:'Glutathione & pigmentation care', c:'var(--c-bright)'},
+  {id:'serum',  name:'Serums',              note:'Niacinamide, retinol, Vit C', c:'var(--c-serum)'},
+  {id:'sun',    name:'Sun Care',            note:'SPF 30+ / 50+ sunscreens', c:'var(--c-sun)'},
+  {id:'moist',  name:'Moisture & Cleanse',  note:'Lotions, creams, cleansers', c:'var(--c-moist)'},
+  {id:'treat',  name:'Skin Treatment',      note:'Eczema, psoriasis, scars', c:'var(--c-treat)'},
+];
+const P = [
+ // ---- Lyra ----
+ {n:'Zidoin-20 Capsules', b:'Lyra', cat:'acne', comp:'Isotretinoin 20 mg softgel', pk:'10×1×10', pr:485, rx:1},
+ {n:'Clincure AD Gel', b:'Lyra', cat:'acne', comp:'Clindamycin 1% + Adapalene 0.1%', pk:'15 g', pr:198, rx:1},
+ {n:'Lyrasol Facewash', b:'Lyra', cat:'acne', comp:'Benzoyl Peroxide 4% w/w', pk:'50 g', pr:225, rx:0},
+ {n:'Lysalic Facewash', b:'Lyra', cat:'acne', comp:'Salicylic Acid IP 2% — clogged pores & blackheads', pk:'50 g', pr:240, rx:0},
+ {n:'Seboshield Facewash', b:'Lyra', cat:'acne', comp:'Zinc PCA — sebum regulation', pk:'100 ml', pr:265, rx:0},
+ {n:'Niacne Facewash', b:'Lyra', cat:'acne', comp:'Tea Tree Oil, Allantoin, Vitamin E, Jojoba', pk:'75 ml', pr:210, rx:0},
+ {n:'Hairdil-5 Solution', b:'Lyra', cat:'hair', comp:'Minoxidil Topical Solution USP 5% w/v', pk:'60 ml', pr:520, rx:0},
+ {n:'Hairdil-F Solution', b:'Lyra', cat:'hair', comp:'Minoxidil 5% + Finasteride 0.1% — male pattern baldness', pk:'60 ml', pr:640, rx:1},
+ {n:'Finoric Tablets', b:'Lyra', cat:'hair', comp:'Finasteride 1 mg — alopecia / hair loss', pk:'10×10', pr:390, rx:1},
+ {n:'Lyotin Forte Tablets', b:'Lyra', cat:'hair', comp:'Biotin, iron, zinc, amino-acid hair nutrition', pk:'3×10', pr:330, rx:0},
+ {n:'Valotrix Shampoo', b:'Lyra', cat:'hair', comp:'Cressatine, wheat protein, Vit B5 & B3 — anti hair-fall', pk:'200 ml', pr:415, rx:0},
+ {n:'Itzalen-100 Capsules', b:'Lyra', cat:'fungal', comp:'Itraconazole 100 mg — fungal skin infections', pk:'10×1×10', pr:560, rx:1},
+ {n:'Acbro Cream', b:'Lyra', cat:'fungal', comp:'Terbinafine HCl 1% — ringworm & athlete\u2019s foot', pk:'30 g', pr:165, rx:0},
+ {n:'Kitnor Shampoo', b:'Lyra', cat:'fungal', comp:'Ketoconazole 2% + ZPTO 1% — dandruff', pk:'100 ml', pr:345, rx:0},
+ {n:'Lulidac Cream', b:'Lyra', cat:'fungal', comp:'Luliconazole 1% — tinea pedis / cruris / corporis', pk:'20 g', pr:255, rx:1},
+ {n:'Kovite Facewash', b:'Lyra', cat:'bright', comp:'Glycolic acid, alpha-arbutin, liquorice', pk:'100 ml', pr:290, rx:0},
+ {n:'Kovite Ultra Gel', b:'Lyra', cat:'bright', comp:'Butyl resorcinol, glutathione, tetrahydrocurcumin', pk:'20 g', pr:410, rx:0},
+ {n:'Lyralite Cream', b:'Lyra', cat:'bright', comp:'Hydroquinone 2% + Tretinoin + Mometasone', pk:'20 g', pr:230, rx:1},
+ {n:'Aloglow UV Gel SPF 50+', b:'Lyra', cat:'sun', comp:'Broad-spectrum UVA/UVB, water & sweat resistant', pk:'50 g', pr:475, rx:0},
+ {n:'Acnevis UV Sunscreen', b:'Lyra', cat:'sun', comp:'Tinosorb M+S — for acne-prone & oily skin', pk:'50 ml', pr:520, rx:0},
+ {n:'Kovite Sunscreen', b:'Lyra', cat:'sun', comp:'Ectoin + Tinosorb — pigmentation-prone skin', pk:'50 ml', pr:540, rx:0},
+ {n:'Valomoist Lotion', b:'Lyra', cat:'moist', comp:'Aloe vera, glycerin, wheat germ & jojoba oil', pk:'200 ml', pr:360, rx:0},
+ {n:'Cetogly Dry Skin Cleanser', b:'Lyra', cat:'moist', comp:'Dexpanthenol, oat beta-glucan — eczema-safe', pk:'100 ml', pr:315, rx:0},
+ {n:'Fill-Foot Cream', b:'Lyra', cat:'moist', comp:'Urea 10% + Lactic Acid 10% — cracked heels', pk:'75 g', pr:245, rx:0},
+ {n:'Allium Gel', b:'Lyra', cat:'treat', comp:'Onion bulb extract, hyaluronate — old & new scars', pk:'20 g', pr:330, rx:0},
+ {n:'Ezosone Cream', b:'Lyra', cat:'treat', comp:'Mometasone Furoate 0.1% — atopic dermatitis', pk:'30 g', pr:190, rx:1},
+ {n:'Taclus Ointment', b:'Lyra', cat:'treat', comp:'Tacrolimus 0.03% — atopic dermatitis', pk:'10 g', pr:410, rx:1},
+ {n:'Lycalamine Lotion', b:'Lyra', cat:'treat', comp:'Calamine 8% + diphenhydramine — sunburn & rashes', pk:'100 ml', pr:175, rx:0},
+ // ---- Biorome ----
+ {n:'Seriq-B3 Serum', b:'Biorome', cat:'serum', comp:'Niacinamide 10% — sebum control, even tone', pk:'30 ml', pr:449, rx:0},
+ {n:'Seriq-A Serum', b:'Biorome', cat:'serum', comp:'Retinol 1% — fine lines & radiance', pk:'30 ml', pr:549, rx:0},
+ {n:'Seriq-B5 Serum', b:'Biorome', cat:'serum', comp:'Vitamin B5 3% + Hyaluronic Acid 2% — deep hydration', pk:'30 ml', pr:499, rx:0},
+ {n:'C-Tone Serum', b:'Biorome', cat:'serum', comp:'Vitamin C 15% — brightening for ageing skin', pk:'30 ml', pr:525, rx:0},
+ {n:'Evenxa Serum', b:'Biorome', cat:'serum', comp:'Tranexamic Acid 5% — hyperpigmentation & acne marks', pk:'30 ml', pr:575, rx:0},
+ {n:'Glutanoor Serum', b:'Biorome', cat:'bright', comp:'Glutathione, tranexamic acid & aloe vera', pk:'30 ml', pr:595, rx:0},
+ {n:'Glutanoor Face Wash', b:'Biorome', cat:'bright', comp:'Glutathione, tranexamic acid, Vit E', pk:'250 ml', pr:340, rx:0},
+ {n:'Glutanoor Cream', b:'Biorome', cat:'bright', comp:'Glutathione with cocoa & shea butter', pk:'30 g', pr:385, rx:0},
+ {n:'Vendase-F 5% Solution', b:'Biorome', cat:'hair', comp:'Minoxidil 5% + Finasteride 0.1% lipid solution', pk:'60 ml', pr:690, rx:1},
+ {n:'Finezest-1 Tablets', b:'Biorome', cat:'hair', comp:'Finasteride 1 mg', pk:'5×2×10', pr:380, rx:1},
+ {n:'Spexdime Shampoo', b:'Biorome', cat:'fungal', comp:'Ketoconazole shampoo with milk protein', pk:'100 ml', pr:310, rx:0},
+ {n:'Candirome-SB 130', b:'Biorome', cat:'fungal', comp:'Itraconazole 130 mg supra-bioavailable capsules', pk:'10×10', pr:640, rx:1},
+ {n:'Acnevent-EC Face Wash', b:'Biorome', cat:'acne', comp:'Hydrous Benzoyl Peroxide 2.5% exfoliating cleanser', pk:'200 ml', pr:295, rx:0},
+ {n:'Sofvin Cream', b:'Biorome', cat:'moist', comp:'White soft paraffin, dimethicone, Vit E', pk:'60 g', pr:220, rx:0},
+ {n:'Soferom Cream', b:'Biorome', cat:'moist', comp:'Emollient moisturizing cream — family pack', pk:'275 g', pr:390, rx:0},
+ {n:'Biotrez-25 Capsules', b:'Biorome', cat:'treat', comp:'Acitretin 25 mg — severe psoriasis', pk:'5×1×10', pr:980, rx:1},
+];
+const WA = '919970158572';
+let brand='all', otcOnly=false, cat='all', cart={};
+
+const catGrid = document.getElementById('catGrid');
+catGrid.innerHTML = `<button class="cat active" style="--cc:var(--navy)" onclick="setCat('all',this)"><b>Everything</b><span>${P.length} products</span></button>` +
+ CATS.map(c=>`<button class="cat" style="--cc:${c.c}" onclick="setCat('${c.id}',this)"><b>${c.name}</b><span>${c.note}</span></button>`).join('');
+
+function setCat(id,el){cat=id;document.querySelectorAll('.cat').forEach(x=>x.classList.remove('active'));el.classList.add('active');render();document.getElementById('shop').scrollIntoView({behavior:'smooth'});}
+function setBrand(b,el){brand=b;document.querySelectorAll('.pill[data-b]').forEach(x=>x.classList.remove('on'));el.classList.add('on');render();}
+function toggleOTC(){otcOnly=!otcOnly;document.getElementById('otcPill').classList.toggle('on',otcOnly);render();}
+function catOf(id){return CATS.find(c=>c.id===id);}
+function inr(n){return '₹'+n.toLocaleString('en-IN');}
+
+function render(){
+  const q=document.getElementById('q').value.trim().toLowerCase();
+  const list=P.filter(p=>
+    (brand==='all'||p.b===brand) &&
+    (cat==='all'||p.cat===cat) &&
+    (!otcOnly||!p.rx) &&
+    (!q || (p.n+' '+p.comp+' '+catOf(p.cat).name).toLowerCase().includes(q))
+  );
+  document.getElementById('empty').style.display=list.length?'none':'block';
+  document.getElementById('grid').innerHTML=list.map((p)=>{
+    const c=catOf(p.cat), i=P.indexOf(p);
+    return `<article class="pcard" style="--cc:${c.c}">
+      <div class="pcap"></div>
+      <div class="pbody">
+        <div class="ptags">
+          <span class="tag tag-cat">${c.name}</span>
+          <span class="tag tag-brand">${p.b}</span>
+          ${p.rx?'<span class="tag tag-rx">Rx</span>':'<span class="tag tag-otc">OTC</span>'}
+        </div>
+        <h3>${p.n}</h3>
+        <p class="comp">${p.comp}</p>
+        <p class="pack">Pack: ${p.pk}</p>
+        <div class="prow">
+          <span class="price">${inr(p.pr)}<small>MRP incl. taxes</small></span>
+          <button class="add" onclick="add(${i})">Add</button>
+        </div>
+        ${p.rx?'<p class="rx-note">⚕ Prescription required — attach at checkout</p>':''}
+      </div>
+    </article>`;
+  }).join('');
+}
+
+function add(i){cart[i]=(cart[i]||0)+1;syncBadge();toast(P[i].n+' added');renderCart();}
+function chg(i,d){cart[i]+=d;if(cart[i]<=0)delete cart[i];syncBadge();renderCart();}
+function syncBadge(){document.getElementById('cartCount').textContent=Object.values(cart).reduce((a,b)=>a+b,0);}
+function toast(m){const t=document.getElementById('toast');t.textContent=m;t.classList.add('show');clearTimeout(t._h);t._h=setTimeout(()=>t.classList.remove('show'),1800);}
+
+let rxFile=false;
+function renderCart(){
+  const body=document.getElementById('cartBody');
+  const keys=Object.keys(cart);
+  let total=0, hasRx=false;
+  if(!keys.length){body.innerHTML='<p style="color:var(--mut);padding:30px 0;text-align:center">Your cart is empty.<br>Add products from the catalog to get started.</p>';}
+  else{
+    body.innerHTML=keys.map(i=>{
+      const p=P[i],c=catOf(p.cat),line=p.pr*cart[i];total+=line;if(p.rx)hasRx=true;
+      return `<div class="citem" style="--cc:${c.c}">
+        <div class="cchip"></div>
+        <div style="flex:1">
+          <b>${p.n} ${p.rx?'<span class="tag tag-rx">Rx</span>':''}</b>
+          <small>${p.b} · ${p.pk}</small>
+          <div class="qty"><button onclick="chg(${i},-1)" aria-label="Decrease">−</button>${cart[i]}<button onclick="chg(${i},1)" aria-label="Increase">+</button></div>
+          <button class="rm" onclick="chg(${i},-999)">Remove</button>
+        </div>
+        <div class="amt">${inr(line)}</div>
+      </div>`;
+    }).join('');
+    if(hasRx){
+      body.innerHTML+=`<div class="rx-upload">
+        <b>⚕ Prescription required</b>
+        Your cart contains Schedule H medicine(s). Attach a clear photo of a valid prescription — our pharmacist verifies it before dispatch.
+        <input type="file" accept="image/*,.pdf" onchange="rxFile=!!this.files.length;document.getElementById('rxok').style.display=rxFile?'block':'none'">
+        <p class="rx-ok" id="rxok">✓ Prescription attached</p>
+      </div>`;
+    }
+  }
+  window._hasRx=hasRx;
+  document.getElementById('cartTotal').textContent=inr(total);
+}
+
+function openCart(){renderCart();document.getElementById('drawer').classList.add('show');document.getElementById('overlay').classList.add('show');}
+function closeCart(){document.getElementById('drawer').classList.remove('show');document.getElementById('overlay').classList.remove('show');}
+
+function checkout(){
+  const keys=Object.keys(cart);
+  if(!keys.length){toast('Cart is empty');return;}
+  if(window._hasRx&&!rxFile){toast('Attach a prescription for Rx items first');return;}
+  let msg='Hello Orion Medicament, I would like to order:%0A';
+  let total=0;
+  keys.forEach(i=>{const p=P[i];total+=p.pr*cart[i];msg+=`%0A• ${encodeURIComponent(p.n)} (${p.b}) × ${cart[i]} — ${encodeURIComponent(inr(p.pr*cart[i]))}${p.rx?' [Rx — prescription attached]':''}`;});
+  msg+=`%0A%0ATotal: ${encodeURIComponent(inr(total))}`;
+  if(window._hasRx)msg+='%0A%0AI will share my prescription photo in this chat.';
+  window.open(`https://wa.me/${WA}?text=${msg}`,'_blank');
+}
+
+function sendB2B(){
+  const n=document.getElementById('bName').value.trim();
+  const biz=document.getElementById('bBiz').value.trim();
+  const t=document.getElementById('bType').value;
+  const m=document.getElementById('bMsg').value.trim();
+  if(!n||!biz){toast('Please fill your name and business');return;}
+  const msg=`Hello Orion Medicament, this is a bulk/trade inquiry.%0A%0AName: ${encodeURIComponent(n)}%0ABusiness: ${encodeURIComponent(biz)}%0AType: ${encodeURIComponent(t)}%0ARequirement: ${encodeURIComponent(m||'Please share your rate list.')}`;
+  window.open(`https://wa.me/${WA}?text=${msg}`,'_blank');
+}
+
+render();syncBadge();
+</script>
+</body>
+</html>
