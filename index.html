@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Orion Medicament — Dermatology & Skincare, Delivered</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <span>🩺 Rx medicines dispensed only against a valid prescription</span>
+    <span>Bulk & trade orders: <a href="https://wa.me/919970158572" target="_blank" rel="noopener">WhatsApp +91 99701 58572</a></span>
+  </div>
+</div>
+
+<header>
+  <div class="wrap hd">
+    <a class="logo" href="#top">
+      <span class="orb"><span>M</span></span>
+      <span><b>Orion Medicament</b><small>Delivering Quality, Building Relationships</small></span>
+    </a>
+    <nav>
+      <a href="#shop">Shop</a>
+      <a href="#rx">Prescriptions</a>
+      <a href="#b2b">Bulk / B2B</a>
+      <a href="#about">About</a>
+    </nav>
+    <button class="cartbtn" onclick="openCart()">Cart <span class="badge" id="cartCount">0</span></button>
+  </div>
+  <div class="stripe"></div>
+</header>
+
+<section class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">Dermatology · Cosmeceuticals · Hair Care</span>
+      <h1>Skin science you can trust, <em>delivered to your door.</em></h1>
+      <p>Orion Medicament brings the complete Lyra and Biorome Dermacare ranges — from daily-use serums and sunscreens to doctor-prescribed treatments — with genuine stock and fast dispatch.</p>
+      <div class="hero-cta">
+        <a class="btn btn-orange" href="#shop">Shop all products</a>
+        <a class="btn btn-ghost" href="#b2b">Bulk / trade inquiry</a>
+      </div>
+      <div class="trust">
+        <div><b>2 brands</b>Lyra & Biorome</div>
+        <div><b>60+ SKUs</b>Derma & cosmeceutical</div>
+        <div><b>100% genuine</b>Direct from marketers</div>
+        <div><b>Rx-safe</b>Pharmacist verified</div>
+      </div>
+    </div>
+    <div class="hero-art" aria-hidden="true">
+      <div class="big-orb"></div>
+      <div class="float-chip fc1"><i>🧴</i>Niacinamide 10%</div>
+      <div class="float-chip fc2"><i>☀️</i>SPF 50+ PA+++</div>
+      <div class="float-chip fc3"><i>💊</i>Hair regrowth</div>
+      <div class="float-chip fc4"><i>✨</i>Glutathione glow</div>
+    </div>
+  </div>
+</section>
+
+<section class="cats wrap">
+  <div class="sec-head">
+    <div>
+      <span class="eyebrow">Browse by concern</span>
+      <h2>What are we treating today?</h2>
+    </div>
+  </div>
+  <div class="cat-grid" id="catGrid"></div>
+</section>
+
+<section class="shop wrap" id="shop">
+  <div class="sec-head">
+    <div>
+      <span class="eyebrow">Full catalog</span>
+      <h2>All products</h2>
+    </div>
+  </div>
+  <div class="tools">
+    <div class="search">🔍 <input id="q" type="search" placeholder="Search by product, ingredient or concern…" oninput="render()"></div>
+    <button class="pill on" data-b="all" onclick="setBrand('all',this)">All brands</button>
+    <button class="pill" data-b="Lyra" onclick="setBrand('Lyra',this)">Lyra</button>
+    <button class="pill" data-b="Biorome" onclick="setBrand('Biorome',this)">Biorome</button>
+    <button class="pill" id="otcPill" onclick="toggleOTC()">OTC only</button>
+  </div>
+  <div class="grid" id="grid"></div>
+  <div class="empty" id="empty" style="display:none">No products match — try clearing the search or filters.</div>
+</section>
+
+<section class="rxband" id="rx">
+  <div class="wrap">
+    <div class="rx-orb">Rx</div>
+    <div>
+      <h2>How prescription orders work</h2>
+      <p>Products marked <b>Rx</b> (isotretinoin, finasteride, clobetasol, itraconazole and similar) are Schedule H medicines. Add them to your cart like any other product — at checkout you'll attach a photo of a valid prescription, and our pharmacist verifies it before dispatch. No prescription yet? Consult your dermatologist first; these medicines need medical supervision.</p>
+    </div>
+  </div>
+</section>
+
+<section class="b2b" id="b2b">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">For pharmacies, clinics & distributors</span>
+      <h2>Bulk & trade orders on WhatsApp</h2>
+      <p>Orion Medicament supplies retail pharmacies, dermatology clinics and stockists across Maharashtra with the full Lyra and Biorome ranges at trade terms.</p>
+      <div class="b2b-list">
+        <div><span class="dot">🏪</span><div><b>Retail pharmacies</b><span>Scheme-based pricing, mixed-brand cartons, weekly replenishment.</span></div></div>
+        <div><span class="dot">🩺</span><div><b>Dermatology clinics</b><span>Clinic dispensing packs, samples and product literature for your patients.</span></div></div>
+        <div><span class="dot">🚚</span><div><b>Stockists & distributors</b><span>Territory-wise distribution with genuine, batch-traceable supply.</span></div></div>
+      </div>
+    </div>
+    <div class="b2b-card">
+      <h3>Send a bulk inquiry</h3>
+      <p>Fill this in and we'll open WhatsApp with your inquiry pre-typed — one tap to send.</p>
+      <div class="field"><label for="bName">Your name</label><input id="bName" placeholder="e.g. Atharva Kulkarni"></div>
+      <div class="field"><label for="bBiz">Business name & city</label><input id="bBiz" placeholder="e.g. Shree Medico, Nashik"></div>
+      <div class="field"><label for="bType">You are a</label>
+        <select id="bType"><option>Retail pharmacy</option><option>Dermatology clinic</option><option>Stockist / distributor</option><option>Hospital</option><option>Other</option></select>
+      </div>
+      <div class="field"><label for="bMsg">What do you need?</label><textarea id="bMsg" placeholder="e.g. Rate list for Lyra anti-fungal range, 50+ units/month"></textarea></div>
+      <button class="wa" onclick="sendB2B()">🟢 Send inquiry on WhatsApp</button>
+      <p class="or-call">Prefer to talk? <a href="tel:+919970158572">Call +91 99701 58572</a></p>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">About us</span>
+      <h2>Delivering quality, building relationships.</h2>
+      <p>Orion Medicament is a dermatology-focused pharmaceutical marketing and distribution house. We partner with trusted manufacturers so that patients, pharmacies and clinics get genuine derma care — from everyday cosmeceuticals to specialised prescription treatments.</p>
+      <p>Every product we ship is sourced directly from the brand, batch-traceable, and stored under proper conditions. That's the relationship part of our tagline.</p>
+    </div>
+    <div class="brandwall">
+      <div class="bcell lyra"><b>Lyra</b><span>Excellence in Dermatology & Cosmeceuticals — 20 years of trust</span></div>
+      <div class="bcell bio"><b>Biorome</b><span>Dermacare — towards advance skincare, haircare & beauty</span></div>
+      <div class="bcell"><b style="color:var(--orange)">60+</b><span>SKUs across 8 categories</span></div>
+      <div class="bcell"><b style="color:var(--navy)">Rx ✓</b><span>Pharmacist-verified prescription handling</span></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <h4>Orion Medicament</h4>
+      <p>Dermatology & cosmeceutical distribution.<br>Atharva Kulkarni · +91 99701 58572</p>
+      <p style="margin-top:10px"><a href="https://wa.me/919970158572" target="_blank" rel="noopener">WhatsApp us →</a></p>
+    </div>
+    <div>
+      <h4>Shop</h4>
+      <a href="#shop">All products</a>
+      <a href="#rx">Prescription policy</a>
+      <a href="#b2b">Bulk / trade</a>
+    </div>
+    <div>
+      <h4>Brands</h4>
+      <a href="#about">Lyra</a>
+      <a href="#about">Biorome Dermacare</a>
+    </div>
+    <p class="legal">Prototype for design review — prices shown are indicative placeholders, not actual MRP. Schedule H medicines are sold strictly against a valid prescription as per the Drugs & Cosmetics Act, 1940 and Rules, 1945. Product information is sourced from brand literature and is not medical advice.</p>
+  </div>
+</footer>
+
+<!-- cart -->
+<div class="overlay" id="overlay" onclick="closeCart()"></div>
+<aside class="drawer" id="drawer" aria-label="Shopping cart">
+  <div class="d-head"><h3>Your cart</h3><button class="x" onclick="closeCart()" aria-label="Close cart">×</button></div>
+  <div class="d-body" id="cartBody"></div>
+  <div class="d-foot">
+    <div class="tot"><span>Total</span><span id="cartTotal">₹0</span></div>
+    <button class="wa" onclick="checkout()">🟢 Place order on WhatsApp</button>
+    <p class="d-note">Your order opens in WhatsApp for confirmation — pay on delivery or as agreed.</p>
+  </div>
+</aside>
+<div class="toast" id="toast">Added to cart</div>
+
+<script src="js/products.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
